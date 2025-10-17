@@ -4,6 +4,28 @@
 #include<string.h>
 int i,j;
 int main_exit;
+int is_admin = 0;
+char logged_in_user[60] = "user";
+
+void login() {
+    char username[50], password[50];
+    system("cls");
+    printf("\n\t=== LOGIN ===\n\tUsername: ");
+    scanf("%s", username);
+    printf("\tPassword: ");
+    scanf("%s", password);
+    
+    if(strcmp(username,"admin")==0 && strcmp(password,"admin")==0) {
+        is_admin = 1;
+        strcpy(logged_in_user, "admin");
+        printf("\n\tAdmin access granted!\n");
+    } else {
+        is_admin = 0;
+        strcpy(logged_in_user, username);
+        printf("\n\tUser access granted!\n");
+    }
+    fordelay(1000000000);
+}
 
 int is_admin = 0;
 char logged_in_user[60] = "user";
